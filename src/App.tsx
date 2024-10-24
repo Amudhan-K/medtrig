@@ -1,26 +1,38 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router } from 'react-router-dom';
+import Header from './components/header/header';
+import SecondRow from './components/secondrow';
+import AppRoutes from './routes/Routes';
+import Banner from './components/Banner';
+import ClinicCards from './components/ClinicCards';
+import BookingInfo from './components/BookingInfo';
+import Telemedicine from './components/Telemedicine';
+import AppointmentReminders from './components/AppointmentReminders';
+import PrivateSecure from './components/PrivateSecure';
+import CustomForm from './components/ClinicForm';
+import Footer from './components/Footer';
+import { initializeIcons } from '@fluentui/react/lib/Icons';
 
-function App() {
+initializeIcons();
+
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+    <div>
+      <Header />
+      <SecondRow />
+      <AppRoutes />
+      <Banner />
+      <ClinicCards /> 
+      <BookingInfo />
+      <Telemedicine />
+      <AppointmentReminders />
+      <PrivateSecure />
+      <CustomForm />
+      <Footer />
     </div>
+    </Router>
   );
-}
+};
 
 export default App;
